@@ -1,0 +1,82 @@
+<launch>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+        <arg name="world_name" value="$(find gantry_assembly_v2)/worlds/warehouse_world.world"/> 
+        <arg name="paused" value="false"/>
+    </include>
+
+    <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+
+    <param name="robot_description" textfile="$(find gantry_assembly_v2)/urdf/gantry_assembly_v2.urdf"/>
+
+    <rosparam command="load" file="$(find gantry_assembly_v2)/config/gantry_config.yaml"/>
+    
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="true"/>
+    </node>
+
+    <node pkg="tf" type="static_transform_publisher" name="map_to_base" args="1 0 0 0 0 0 1 /map /world 10" />
+
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller controller_h_slider controller_v_slider controller_joint1_gripper controller_joint2_gripper" />
+    
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/> -->
+
+    <node
+    name="spawn_model_gantry1"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find gantry_assembly_v2)/urdf/gantry_assembly_v2.urdf -urdf -model gantry_assembly -x 10.5 -y -14.55 -Y 1.57"
+    output="screen" />
+
+    <!--  Second Gantry -->
+    <group ns="arm_group">
+
+    	<rosparam command="load" file="$(find gantry_assembly_v2)/config/arm_config.yaml"/>
+
+    	<param name="robot_description" textfile="$(find gantry_assembly_v2)/urdf/tu_nguyen.urdf"/>
+
+    	<node name="controller_spawner_2" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller controller_joint_1 controller_joint_2 controller_joint_3 controller_joint_4 controller_joint_51 controller_joint_52" />
+
+        <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/> -->
+
+        <node name="spawn_model_gantry2"
+	    pkg="gazebo_ros"
+	    type="spawn_model"
+	    args="-file $(find gantry_assembly_v2)/urdf/tu_nguyen.urdf -urdf -model arm -x -9 -y 10 "
+	    output="screen" />
+
+    </group>
+
+    <!-- mobile robot -->
+
+    <group ns="mobile_robot_group">
+
+    	<rosparam command="load" file="$(find gantry_assembly_v2)/config/warebot_config.yaml"/>
+
+    	<param name="robot_description" textfile="$(find gantry_assembly_v2)/urdf/warebot_v3.urdf"/>
+
+	    <node name="mobile_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	      output="screen" args="joint_state_controller controller_FR_steer controller_FL_steer controller_RL_drive controller_RR_drive" />
+
+	    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+
+	    <node
+	    name="mobile_spawn_model"
+	    pkg="gazebo_ros"
+	    type="spawn_model"
+	    args="-file $(find warebot_v3)/urdf/warebot_v3.urdf -urdf -z 0.2 -model warebot_v3"
+	    output="screen" />
+	</group>
+
+    <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+</launch>

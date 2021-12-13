@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'h_slider_joint', 'v_slider_joint', 'gripper_1_joint', 'gripper_2_joint', ]

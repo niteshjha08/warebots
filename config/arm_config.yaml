@@ -1,0 +1,33 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 100
+
+controller_joint_1:
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: joint_1 # Name of the joint.  
+  pid : {p: 200.0 , i: 5.0 , d: 1.0}
+
+controller_joint_2: #
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: joint_2 # Name of the joint.  
+  pid : {p: 100000.0 , i: 10 , d: 0.0}
+
+controller_joint_3:
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: joint_3 # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}
+
+controller_joint_4:
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: joint_4 # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}
+
+controller_joint_51:
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: joint_51 # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}
+
+controller_joint_52:
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: joint_52 # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}

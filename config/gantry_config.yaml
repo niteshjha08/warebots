@@ -1,0 +1,23 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 100
+
+controller_h_slider:
+  type: velocity_controllers/JointVelocityController # Type of controller. 
+  joint: h_slider_joint # Name of the joint.  
+  pid : {p: 200.0 , i: 5.0 , d: 1.0}
+
+controller_v_slider: #
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: v_slider_joint # Name of the joint.  
+  pid : {p: 100000.0 , i: 10 , d: 0.0}
+
+controller_joint1_gripper:
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: gripper_1_joint # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}
+
+controller_joint2_gripper:
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: gripper_2_joint # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}

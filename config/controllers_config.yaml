@@ -1,0 +1,44 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 100
+
+controller_h_slider:
+  type: velocity_controllers/JointVelocityController # Type of controller. 
+  joint: h_slider_joint # Name of the joint.  
+  pid : {p: 200.0 , i: 5.0 , d: 1.0}
+
+controller_v_slider: #
+  type: position_controllers/JointPositionController # Type of controller. 
+  joint: v_slider_joint # Name of the joint.  
+  pid : {p: 100000.0 , i: 10 , d: 0.0}
+
+controller_joint1_gripper:
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: gripper_1_joint # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}
+
+controller_joint2_gripper:
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: gripper_2_joint # Name of the joint.  
+  pid : {p: 1000.0 , i: 10.0 , d: 20.0}
+
+# Steering controllers
+controller_FR_steer: # change the name
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: FR_steering # Name of the joint.  
+  pid : {p: 200.0 , i: 1.0 , d: 1.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0} 
+
+controller_FL_steer: # change the name
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: FL_steering # Name of the joint.  
+  pid : {p: 200.0 , i: 1.0 , d: 1.0}
+
+controller_RL_drive: # change the name
+  type: velocity_controllers/JointVelocityController # Type of controller. 
+  joint: RL_axle # Name of the joint.  
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}
+
+controller_RR_drive: # change the name
+  type: velocity_controllers/JointVelocityController # Type of controller. 
+  joint: RR_axle # Name of the joint.  
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}

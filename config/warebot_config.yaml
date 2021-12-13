@@ -1,0 +1,35 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Steering controllers
+controller_FR_steer: # change the name
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: FR_steering # Name of the joint.  
+  pid : {p: 200.0 , i: 1.0 , d: 1.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0} 
+
+controller_FL_steer: # change the name
+  type: effort_controllers/JointPositionController # Type of controller. 
+  joint: FL_steering # Name of the joint.  
+  pid : {p: 200.0 , i: 1.0 , d: 1.0}
+
+# Drive axle controllers:
+# controller_FR_drive: # change the name
+#   type: velocity_controllers/JointVelocityController # Type of controller. 
+#   joint: FR_axle # Name of the joint.  
+#   pid : {p: 200.0 , i: 0.0 , d: 0.0}
+
+# controller_FL_drive: # change the name
+#   type: velocity_controllers/JointVelocityController # Type of controller. 
+#   joint: FL_axle # Name of the joint.  
+#   pid : {p: 200.0 , i: 0.0 , d: 0.0}
+
+controller_RL_drive: # change the name
+  type: velocity_controllers/JointVelocityController # Type of controller. 
+  joint: RL_axle # Name of the joint.  
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}
+
+controller_RR_drive: # change the name
+  type: velocity_controllers/JointVelocityController # Type of controller. 
+  joint: RR_axle # Name of the joint.  
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}

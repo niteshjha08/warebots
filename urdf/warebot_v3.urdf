@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="warebot_v3">
+
+  <link name="dummy_link"/>
+  <joint 
+    name="dummy_joint"
+    type="fixed">
+    <parent link="dummy_link"/>
+    <child link="chassis"/>
+  </joint>
+
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="1.1037613347761E-16 0.0635051315978042 1.11024456359132E-16"
+        rpy="0 0 0" />
+      <mass
+        value="49.157010416797" />
+      <inertia
+        ixx="1.12311661391356"
+        ixy="1.30727060789662E-20"
+        ixz="2.31412048167835E-16"
+        iyy="3.43549121757344"
+        iyz="-2.81238691622772E-20"
+        izz="2.44449761615106" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FL_l_tube">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0.0148002836453275 -0.0604712004643204"
+        rpy="0 0 0" />
+      <mass
+        value="0.14194071579655" />
+      <inertia
+        ixx="0.000229149478932408"
+        ixy="1.49607194308791E-19"
+        ixz="-1.34889996850247E-19"
+        iyy="0.000151692524544474"
+        iyz="6.52289159453429E-05"
+        izz="9.92694656968883E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FL_l_tube.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FL_l_tube.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_steering"
+    type="revolute">
+    <origin
+      xyz="0.2794 0.2032 0"
+      rpy="0 0 -0.007573" />
+    <parent
+      link="chassis" />
+    <child
+      link="FL_l_tube" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="FL_wheel">
+    <inertial>
+      <origin
+        xyz="0.0411028122783708 -3.83577736240426E-09 4.17768467042556E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.275264002606874" />
+      <inertia
+        ixx="0.000851891470975203"
+        ixy="7.19021069992574E-11"
+        ixz="-3.41421009668958E-09"
+        iyy="0.000615421909910346"
+        iyz="-5.15825319699796E-10"
+        izz="0.000615421723011077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FL_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FL_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.049027 -0.092456"
+      rpy="1.7829 0 1.5708" />
+    <parent
+      link="FL_l_tube" />
+    <child
+      link="FL_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FR_l_tube">
+    <inertial>
+      <origin
+        xyz="0 0.0148002836453276 -0.0604712004643204"
+        rpy="0 0 0" />
+      <mass
+        value="0.14194071579655" />
+      <inertia
+        ixx="0.000229149478932408"
+        ixy="8.15269211732264E-21"
+        ixz="-1.45592007880557E-20"
+        iyy="0.000151692524544474"
+        iyz="6.52289159453429E-05"
+        izz="9.92694656968883E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FR_l_tube.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FR_l_tube.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_steering"
+    type="revolute">
+    <origin
+      xyz="0.2794 -0.2032 0"
+      rpy="0 0 -3.1291" />
+    <parent
+      link="chassis" />
+    <child
+      link="FR_l_tube" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="FR_wheel">
+    <inertial>
+      <origin
+        xyz="0.0431305701607207 -3.83577780649347E-09 4.17768443991551E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.275264002606501" />
+      <inertia
+        ixx="0.000851891470974443"
+        ixy="7.19021047027393E-11"
+        ixz="-3.41420991737575E-09"
+        iyy="0.0006154219099097"
+        iyz="-5.15825319794573E-10"
+        izz="0.00061542172301043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FR_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/FR_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.046999 -0.092456"
+      rpy="0.056054 0 1.5708" />
+    <parent
+      link="FR_l_tube" />
+    <child
+      link="FR_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RL_l_tube">
+    <inertial>
+      <origin
+        xyz="0 0.0148002836453275 -0.0604712004643204"
+        rpy="0 0 0" />
+      <mass
+        value="0.14194071579655" />
+      <inertia
+        ixx="0.000229149478932408"
+        ixy="2.85134999767632E-21"
+        ixz="-8.71232048787394E-21"
+        iyy="0.000151692524544474"
+        iyz="6.52289159453429E-05"
+        izz="9.92694656968883E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RL_l_tube.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RL_l_tube.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_steering"
+    type="fixed">
+    <origin
+      xyz="-0.2794 0.2032 0"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="RL_l_tube" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RL_wheel">
+    <inertial>
+      <origin
+        xyz="0.0411074735746797 4.05959945992684E-07 9.87001973762336E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.27526400260683" />
+      <inertia
+        ixx="0.000851891684215684"
+        ixy="-3.30999578626669E-09"
+        ixz="-7.90615717446464E-10"
+        iyy="0.000615421614267171"
+        iyz="4.26776186601956E-10"
+        izz="0.000615422031419858" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RL_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RL_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.049022 -0.092456"
+      rpy="2.2415 0 1.5708" />
+    <parent
+      link="RL_l_tube" />
+    <child
+      link="RL_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RR_l_tube">
+    <inertial>
+      <origin
+        xyz="0 0.0148002836453276 -0.0604712004643204"
+        rpy="0 0 0" />
+      <mass
+        value="0.14194071579655" />
+      <inertia
+        ixx="0.000229149478932408"
+        ixy="-2.41399252769946E-20"
+        ixz="-7.41770358269228E-21"
+        iyy="0.000151692524544474"
+        iyz="6.52289159453429E-05"
+        izz="9.92694656968882E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RR_l_tube.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RR_l_tube.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_steering"
+    type="fixed">
+    <origin
+      xyz="-0.2794 -0.2032 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="RR_l_tube" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RR_wheel">
+    <inertial>
+      <origin
+        xyz="0.0411074735746949 2.81471280116907E-07 -3.08738005855291E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.275264002606999" />
+      <inertia
+        ixx="0.00085189147097577"
+        ixy="-2.33054081404338E-09"
+        ixz="2.49611342112908E-09"
+        iyy="0.000615422339452627"
+        iyz="3.58955588370584E-11"
+        izz="0.000615421293469637" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RR_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://warebot_v3/meshes/RR_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.049022 -0.092456"
+      rpy="-1.9358 0 1.5708" />
+    <parent
+      link="RR_l_tube" />
+    <child
+      link="RR_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+  <transmission name="trans_1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FL_steering">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Fleft_steering">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FR_steering">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Fright_steering">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <!-- <transmission name="trans_5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FR_axle">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="FR_drive">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FL_axle">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="FL_drive">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission> -->
+
+  <transmission name="trans_7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RR_axle">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="RR_drive">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RL_axle">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="RL_drive">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+</robot>
