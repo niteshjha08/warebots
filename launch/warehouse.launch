@@ -70,7 +70,7 @@
 	    name="mobile_spawn_model"
 	    pkg="gazebo_ros"
 	    type="spawn_model"
-	    args="-file $(find warebot_v3)/urdf/warebot_v3.urdf -urdf -z 0.2 -model warebot_v3"
+	    args="-file $(find gantry_assembly_v2)/urdf/warebot_v3.urdf -urdf -z 0.2 -model warebot_v3"
 	    output="screen" />
 	</group>
 
