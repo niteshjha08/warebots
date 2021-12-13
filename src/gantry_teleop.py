@@ -11,13 +11,10 @@ msg = """
 Control The Gantry!
 ---------------------------
 Moving around:
-        i    
-   j    k    l
-        ,  
-      g  , f : to open/close grip  
-q/z : increase/decrease max speeds by 10%
-w/x : increase/decrease only linear speed by 10%
-e/c : increase/decrease only angular speed by 10%
+l : lower gripper
+j: raise gripper
+g  , f : to open/close grip respectively  
+
 space key, k : force stop
 anything else : stop smoothly
 CTRL-C to quit
@@ -139,14 +136,14 @@ if __name__=="__main__":
                     curr_z=z_upper_lim
 
             if(key=='g' or key == 'g'):
-                # l lowers it, j raises it
+                # opens gripper
                 if(curr_gripper>gripper_low_lim):
                     curr_gripper-=0.01
                 else:
                     curr_gripper=gripper_low_lim
             
             if(key=='f' or key == 'f'):
-                # l lowers it, j raises it
+                # closes gripper
                 if(curr_gripper<gripper_upper_lim):
                     curr_gripper+=0.01
                 else:
@@ -157,7 +154,7 @@ if __name__=="__main__":
                                                 Attach)
                 attach_srv.wait_for_service()
                 rospy.loginfo("Created ServiceProxy to /link_attacher_node/attach")
-                # Link them
+                # Link them dynamically
                 rospy.loginfo("Attaching gripper_base and box")
                 req = AttachRequest()
                 req.model_name_1 = "gantry_assembly"
@@ -167,7 +164,7 @@ if __name__=="__main__":
 
                 attach_srv.call(req)
 
-            if(key=='a' or key=='A'):
+            if(key=='a' or key=='A'): # attach
                 attach_srv = rospy.ServiceProxy('/link_attacher_node/attach',
                                                 Attach)
                 attach_srv.wait_for_service()
@@ -182,7 +179,7 @@ if __name__=="__main__":
 
                 attach_srv.call(req)
 
-            if(key=='d' or key=='D'):
+            if(key=='d' or key=='D'):  # detach
                 attach_srv = rospy.ServiceProxy('/link_attacher_node/detach',
                                     Attach)
                 attach_srv.wait_for_service()

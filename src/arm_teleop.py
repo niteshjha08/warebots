@@ -11,13 +11,11 @@ msg = """
 Control The Gantry!
 ---------------------------
 Moving around:
-        i    
-   j    k    l
-        ,  
-      g  , f : to open/close grip  
-q/z : increase/decrease max speeds by 10%
-w/x : increase/decrease only linear speed by 10%
-e/c : increase/decrease only angular speed by 10%
+q/a: control joint 1
+w/s: control joint 2
+e/d: control joint 3
+r/f: control joint 4
+t/g: open/close gripper
 space key, k : force stop
 anything else : stop smoothly
 CTRL-C to quit
