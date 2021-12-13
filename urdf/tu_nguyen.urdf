@@ -41,7 +41,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/base_link.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -55,7 +55,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/base_link.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -81,7 +81,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_1.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_1.STL" />
       </geometry>
       <material
         name="">
@@ -95,7 +95,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_1.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -139,7 +139,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_2.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_2.STL" />
       </geometry>
       <material
         name="">
@@ -153,7 +153,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_2.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -197,7 +197,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_3.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_3.STL" />
       </geometry>
       <material
         name="">
@@ -211,7 +211,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_3.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_3.STL" />
       </geometry>
     </collision>
   </link>
@@ -255,7 +255,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_4.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_4.STL" />
       </geometry>
       <material
         name="">
@@ -269,7 +269,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_4.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_4.STL" />
       </geometry>
     </collision>
   </link>
@@ -313,7 +313,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_51.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_51.STL" />
       </geometry>
       <material
         name="">
@@ -327,7 +327,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_51.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_51.STL" />
       </geometry>
     </collision>
   </link>
@@ -371,7 +371,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_52.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_52.STL" />
       </geometry>
       <material
         name="">
@@ -385,7 +385,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://tu_nguyen/meshes/link_52.STL" />
+          filename="package://gantry_assembly_v2/meshes_arm/link_52.STL" />
       </geometry>
     </collision>
   </link>
